@@ -1,15 +1,16 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" ng-app="myApp">
 <head>
   <meta charset="utf-8">
   <title>My AngularJS App</title>
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/app.css"/>
+
 </head>
 <body>
 
 <div class="container">
-    <header ng-include="'partials/nav.html'"></header>
+    <div ng-include="'partials/nav.html'"></div>
     <div ui-view></div>
     <footer ng-include="'partials/footer.html'"></footer>
 </div>
