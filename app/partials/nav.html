@@ -18,12 +18,12 @@
     </li>
     <li><img src="img/techm_logo2.png"/></li>
     <li class="container-fluid" ng-controller="loginCtrl">
-        <form ng-show="!loggedIn" class="navbar-form" style="line-height:40px">
+        <form name="loginForm" ng-show="!loggedIn" class="navbar-form nav-login-form">
             <div class="form-group">
                 <input type="text" class="form-control nav-input" placeholder="Username" ng-model="username">
                 <input type="password" class="form-control nav-input" placeholder="Password" ng-model="password">
             </div>
-            <button ng-click="login()" class="btn btn-xs btn-default">Login</button>
+            <button ng-click="login()" ng-disabled="formIsFilled()" class="btn btn-xs btn-default">Login</button>
         </form>
         <div ng-show="loggedIn">
             <span class="welcome">Welcome <span>{{name}}</span></span>

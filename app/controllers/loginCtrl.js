@@ -3,7 +3,13 @@
 function loginCtrl($scope) {
     $scope.loggedIn = false;
     $scope.name = 'Brian Goodspeed';
-
+    $scope.formIsFilled = function(){
+        if($scope.username && $scope.password){
+            return false;
+        }else{
+            return true;
+        }
+    };
     $scope.login = function() {
         if ($scope.username == 'test' && $scope.password == '1234') {
             $scope.loggedIn = true;
