@@ -349,7 +349,7 @@ input.gn-search:focus {
 }
 
 .panel-body{
-    color: #888888;
+    color: #888;
 }
 
 @media screen and (max-width: 422px) { 

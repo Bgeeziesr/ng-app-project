@@ -34,6 +34,7 @@ body {
 	margin: 0 auto;
 	padding: 12em 2em;
 	padding-left: 370px;
+    padding-right: 200px;
 	background: rgba(0,0,0,0.05);
 }
 
@@ -55,22 +56,31 @@ body {
 	font-weight: 300;
 }
 
-.welcome {
-    font-size:x-large;
-	margin: 0;
-	font-weight: 300;
-}
-
-.welcome span{
-    color: #ff832a;
-}
-
 .container > div.view h1 span {
 	display: block;
 	font-size: 55%;
 	color: #74818e;
 	padding: 0 0 0.6em 0.1em;
 	font-weight: 100;
+}
+
+.container > div.view hr {
+    border: .1em;
+    border-left: 0px;
+    border-right: 0px;
+    border-color: rgba(0,0,0,.08);
+    border-style: inset;
+    margin-bottom: 30px;
+}
+
+.welcome {
+    font-size:x-large;
+    margin: 0;
+    font-weight: 300;
+}
+
+.welcome span{
+    color: #ff832a;
 }
 
 /* To Navigation Style */

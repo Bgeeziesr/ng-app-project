@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-function loginCtrl($scope) {
+function loginCtrl($scope, $location) {
     $scope.loggedIn = false;
     $scope.name = 'Brian Goodspeed';
     $scope.formIsFilled = function(){
@@ -22,4 +22,8 @@ function loginCtrl($scope) {
             alert("Login failed. Invalid username or password");
         }
     };
+    $scope.logout = function () {
+        $scope.loggedIn = false;
+        $location.path('/');
+    }
 }
