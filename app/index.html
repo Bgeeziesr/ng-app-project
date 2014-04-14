@@ -3,15 +3,21 @@
 <head>
   <meta charset="utf-8">
   <title>My AngularJS App</title>
-    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/app.css"/>
-
+  <link rel="stylesheet" href="css/normalize.css"/>
+  <link rel="stylesheet" href="css/component.css" />
+  <link rel="stylesheet" href="css/demo.css" />
+  
 </head>
 <body>
 
-<div class="container">
-    <div ng-include="'partials/nav.html'"></div>
-    <div ui-view></div>
+<div class="container body">
+    <div ng-include="'partials/nav.html'" ></div>
+    <header>
+        <div ui-view></div>
+    </header>
     <footer ng-include="'partials/footer.html'"></footer>
 </div>
 
@@ -23,7 +29,15 @@
   <script src="../bower_components/angular/angular.js"></script>
   <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 
+    <!--Controllers-->
+    <script src="controllers/menuCtrl.js"></script>
+    <script src="controllers/homeCtrl.js"></script>
+    <script src="controllers/loginCtrl.js"></script>
+
+
   <script src="js/app.js"></script>
+  <script src="js/classie.js"></script>
+  <script src="js/gnmenu.js"></script>
 
 <!-- Twitter Bootstrap stuff -->
 <script src="../bower_components/bootstrap/js/affix.js"></script>

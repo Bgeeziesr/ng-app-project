@@ -1,35 +1,32 @@
-<ul id="gn-menu" class="gn-menu-main">
+<script>
+    new gnMenu(document.getElementById('gn-menu'));
+</script>
+<ul id="gn-menu" class="gn-menu-main" ng-controller="menuCtrl">
     <li class="gn-trigger">
         <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
         <nav class="gn-menu-wrapper">
             <div class="gn-scroller">
                 <ul class="gn-menu">
-                    <li class="gn-search-item">
-                        <input placeholder="Search" type="search" class="gn-search">
-                        <a class="gn-icon gn-icon-search"><span>Search</span></a>
-                    </li>
-                    <li>
-                        <a class="gn-icon gn-icon-download">Downloads</a>
-                        <ul class="gn-submenu">
-                            <li><a class="gn-icon gn-icon-illustrator">Vector Illustrations</a></li>
-                            <li><a class="gn-icon gn-icon-photoshop">Photoshop files</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="gn-icon gn-icon-cog">Settings</a></li>
-                    <li><a class="gn-icon gn-icon-help">Help</a></li>
-                    <li>
-                        <a class="gn-icon gn-icon-archive">Archives</a>
-                        <ul class="gn-submenu">
-                            <li><a class="gn-icon gn-icon-article">Articles</a></li>
-                            <li><a class="gn-icon gn-icon-pictures">Images</a></li>
-                            <li><a class="gn-icon gn-icon-videos">Videos</a></li>
-                        </ul>
+                    <li ng-repeat="link in links">
+                        <a class="gn-icon" ng-href="{{link.href}}">
+                            <i class="fa fa-{{link.icon}}" ></i>{{link.label}}
+                        </a>                   
                     </li>
                 </ul>
             </div><!-- /gn-scroller -->
         </nav>
     </li>
-    <li><a href="http://tympanus.net/codrops">Codrops</a></li>
-    <li><a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/HeaderEffects/"><span>Previous Demo</span></a></li>
-    <li><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=16030"><span>Back to the Codrops Article</span></a></li>
+    <li><img src="img/techm_logo2.png"/></li>
+    <li class="container-fluid" ng-controller="loginCtrl">
+        <form ng-show="!loggedIn" class="navbar-form" style="line-height:40px">
+            <div class="form-group">
+                <input type="text" class="form-control nav-input" placeholder="Username" ng-model="username">
+                <input type="password" class="form-control nav-input" placeholder="Password" ng-model="password">
+            </div>
+            <button ng-click="login()" class="btn btn-xs btn-default">Login</button>
+        </form>
+        <div ng-show="loggedIn">
+            <span class="welcome">Welcome <span>{{name}}</span></span>
+        </div>
+    </li>
 </ul>
