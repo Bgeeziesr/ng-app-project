@@ -1,8 +1,7 @@
 ﻿'use strict';
 
-function loginCtrl($scope, $location) {
+myApp.controller('loginCtrl', function($scope, $location, userFactory) {
     $scope.loggedIn = false;
-    $scope.name = 'Brian Goodspeed';
     $scope.formIsFilled = function(){
         if($scope.username && $scope.password){
             return false;
@@ -11,11 +10,15 @@ function loginCtrl($scope, $location) {
         }
     };
     $scope.login = function() {
-        if ($scope.username == 'test' && $scope.password == '1234') {
+
+       var user = userFactory.getUser($scope.username, $scope.password);
+
+        if (userFactory.validateUser()) {
             $scope.loggedIn = true;
             $scope.username = '';
             $scope.password = '';
-            alert("Login successful");
+            $scope.name = user.name;
+            userFactory.setCurrentUserRole(user.role);
         } else {
             $scope.username = '';
             $scope.password = '';
@@ -26,4 +29,4 @@ function loginCtrl($scope, $location) {
         $scope.loggedIn = false;
         $location.path('/');
     }
-}
+});

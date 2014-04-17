@@ -1,20 +1,15 @@
 ﻿'use strict';
 
-function menuCtrl($scope) {
-    var homeLinks = [{'label':'','href':'','icon':''}];
-    var approverLinks = [{'label':'My PMTs','href':'/pmt','icon':'folder-open'}];
-    var estimatorLinks = [{'label':'','href':'','icon':''}];
+myApp.controller('menuCtrl', function($scope, $rootScope, $location, userFactory, linkFactory) {
 
-    $scope.links = [
-        {
-            'label': 'My PMTs',
-            'href': '/pmt',
-            'icon': 'folder-open'
-        },
-        {
-            'label': 'Logout',
-            'href': '/logout',
-            'icon': 'sign-out'
-        }
-    ];
-};
+    $scope.links = [];
+
+    $scope.setLinks = function(){
+
+        $scope.links = linkFactory.getLinks(userFactory.getCurrentUserRole());
+    }
+
+    $rootScope.$on("$locationChangeStart", function() {
+        $scope.setLinks();
+    });
+});

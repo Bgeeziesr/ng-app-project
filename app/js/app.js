@@ -15,12 +15,12 @@ var myApp = angular
             templateUrl: 'partials/home.html',
             controller: 'homeCtrl'
             })
-        .state('about', {
-            url: '/about',
-            templateUrl: 'partials/about.html'
+        .state('pmt', {
+            url: '/pmt',
+            templateUrl: 'partials/pmt.html',
+            controller: 'pmtCtrl'
         })
-        .state('copntact', {
-            url: 'contact',
-            templateUrl: 'partials/contact.html'
+        .state('logout', {
+            url: '/logout'
         })
     }])

@@ -3,12 +3,12 @@
 </script>
 <ul id="gn-menu" class="gn-menu-main" ng-controller="menuCtrl">
     <li class="gn-trigger">
-        <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+        <a ng-mouseover="setLinks()" class="gn-icon gn-icon-menu"><span>Menu</span></a>
         <nav class="gn-menu-wrapper">
             <div class="gn-scroller">
                 <ul class="gn-menu">
                     <li ng-repeat="link in links">
-                        <a class="gn-icon" ng-href="{{link.href}}">
+                        <a class="gn-icon" href="{{link.href}}">
                             <i class="fa fa-{{link.icon}}" ></i>{{link.label}}
                         </a>                   
                     </li>
