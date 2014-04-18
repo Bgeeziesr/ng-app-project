@@ -1,6 +1,6 @@
 'use strict';
 
-myApp.controller('pmtCtrl', function($scope, pmtFactory){
+myApp.controller('pmtCtrl', function($scope, pmtFactory, $rootScope){
     $scope.curPmt = {
         id:$scope.pmtId,
         pid:$scope.pid,
@@ -39,4 +39,6 @@ myApp.controller('pmtCtrl', function($scope, pmtFactory){
 
         pmtFactory.create($scope.curPmt);
     }
+
+    $scope.wizardControl = {};
 });

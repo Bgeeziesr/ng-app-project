@@ -1,8 +1,8 @@
 'use strict';
 
-myApp.directive('pmtWizard',function(){
+myApp.directive('pmtWizard', function factory(){
     return{
-        scope: true,
+        scope: {control: '='},
         templateUrl: 'partials/pmtWizard.html',
         link: function(scope, element, attrs){
 
@@ -12,10 +12,11 @@ myApp.directive('pmtWizard',function(){
                 contentWidth: 700,
                 backdrop: 'static'
             };
+
             var wizard = $("#pmt-wizard").wizard(options);
 
-            scope.showWizard = function(e){
-                e.preventDefault();
+            var showWizard = function(){
+                alert("showing wizard");
                 wizard.show();
             }
 
@@ -1161,4 +1162,4 @@ myApp.directive('pmtWizard',function(){
 
         }
     }
-})
+});

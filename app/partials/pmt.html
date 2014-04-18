@@ -12,12 +12,13 @@
                 <tr>
                     <th class="text-center">PMT ID</th>
                     <th class="text-center">MOTS ID</th>
+                    <th></th>
                 </tr>
             </thead>
             <tr ng-repeat="pmt in pmts">
                 <td>{{pmt.id}}</td>
                 <td>{{pmt.mots.id}}</td>
-                <td><button ng-click="openWizard()" class="btn btn-sm">Edit</button></td>
+                <td><button ng-click="showWizard()" class="btn btn-sm">Edit</button></td>
             </tr>
         </table>
     </div>
