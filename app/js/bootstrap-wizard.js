@@ -383,7 +383,7 @@
                             '<span class="wizard-subtitle"></span>',
                         '</div>',
                         '<div class="modal-body wizard-body">',
-                            '<div class="place-left wizard-steps">',
+                            '<div class="pull-left wizard-steps">',
                                 '<div class="wizard-nav-container">',
                                     '<ul class="nav wizard-nav-list">',
                                     '</ul>',

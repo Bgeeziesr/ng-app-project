@@ -150,6 +150,14 @@ li.wizard-nav-item.active .fa-chevron-right {
 	font-weight:normal;
 }
 
+.wizard-card input, .wizard-card select, .wizard-card textarea {
+    padding: 5px;
+    border-radius: 0px;
+    margin-bottom: 8px;
+}
+.wizard-card .form-group div {
+    padding-left: 0;
+}
 /* WIZARD FOOTER */
 .wizard-footer {
 	padding:0;
