@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-myApp.controller('loginCtrl', function($scope, $location, userFactory) {
+myApp.controller('loginCtrl', function($scope, userFactory, $rootScope) {
     $scope.loggedIn = false;
     $scope.formIsFilled = function(){
         if($scope.username && $scope.password){
@@ -25,8 +25,10 @@ myApp.controller('loginCtrl', function($scope, $location, userFactory) {
             alert("Login failed. Invalid username or password");
         }
     };
-    $scope.logout = function () {
+
+    $rootScope.logout = function () {
         $scope.loggedIn = false;
-        $location.path('/');
+        userFactory.setCurrentUserRole('none');
+
     }
 });

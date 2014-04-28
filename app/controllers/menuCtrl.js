@@ -9,7 +9,7 @@ myApp.controller('menuCtrl', function($scope, $rootScope, $location, userFactory
         $scope.links = linkFactory.getLinks(userFactory.getCurrentUserRole());
     }
 
-    $rootScope.$on("$locationChangeStart", function() {
+    $rootScope.$on("$routeChangeStart", function() {
         $scope.setLinks();
     });
 });

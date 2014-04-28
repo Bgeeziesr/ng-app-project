@@ -18,9 +18,24 @@ var myApp = angular
         .state('pmt', {
             url: '/pmt',
             templateUrl: 'partials/pmt.html',
-            controller: 'pmtCtrl'
+            controller: 'pmtCtrl',
+            resolve:{
+                load: function(userFactory){
+                    var userRole = userFactory.getCurrentUserRole();
+                    if(userRole == 'estimator' || userRole == 'approver'){
+
+                    }
+                }
+            }
         })
         .state('logout', {
-            url: '/logout'
+            url: '/logout',
+            templateUrl: 'partials/logout.html',
+            controller: 'loginCtrl',
+            resolve:{
+                load: function($rootScope){
+                    $rootScope.logout();
+                }
+            }
         })
     }])
