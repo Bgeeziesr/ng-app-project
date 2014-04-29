@@ -148,6 +148,7 @@ li.wizard-nav-item.active .fa-chevron-right {
 	font-size:21px;
 	line-height:40px;
 	font-weight:normal;
+    border-bottom:1px inset RGBA(0,0,0,.1);
 }
 
 .wizard-card input, .wizard-card select, .wizard-card textarea {

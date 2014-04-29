@@ -1,7 +1,7 @@
 'use strict';
 
 myApp.controller('pmtCtrl', function($scope, pmtFactory, $rootScope){
-    $scope.curPmt = {
+    /*$scope.curPmt = {
         id:$scope.pmtId,
         pid:$scope.pid,
         si:$scope.si,
@@ -31,9 +31,22 @@ myApp.controller('pmtCtrl', function($scope, pmtFactory, $rootScope){
             }
         },
         comments:$scope.comments
-    };
+    };*/
+
+    $scope.isEditing = false;
 
     $scope.pmts = pmtFactory.getPmts();
+
+    $scope.editPmt = function(thisPmt){
+        $scope.curPmt = thisPmt;
+        $scope.isEditing = true;
+        console.log($scope.curPmt);
+    }
+
+    $scope.loadPmtData = function(){
+        $scope.curPmt = $scope.curPmt;
+        console.log('loading Pmt data');
+    }
 
     $scope.savePmt = function (){
 

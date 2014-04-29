@@ -1,16 +1,11 @@
+<div>
 <div class="wizard" id="pmt-wizard" data-title="PMT Form">
     <div class="wizard-card container-fluid-fluid" data-cardname="pid">
         <h3>PID Details</h3>
         <div class="container-fluid">
             <div class="row form-group">
-                <div class="col-sm-4">
-                    <select class="form-control" id="pidSelect" name="pidSelect" placeholder="Select PID" required>
-                        <option value="" selected disabled>Select PID</option>
-                        <option value="new">Create new PID</option>
-                    </select>
-                </div>
-                <div class="col-sm-6 ">
-                    <input class="form-control" id="pid" type="text" name="pid" placeholder="Enter PID">
+                <div class="col-sm-5">
+                    <input class="form-control" type="text" placeholder="Enter PID" ng-model="curPmt.pid">
                 </div>
             </div>
             <div class="row form-group">
@@ -25,15 +20,8 @@
                 </div>
             </div>
             <div class="row form-group">
-                <div class="col-sm-4">
+                <div class="col-sm-5">
                     <input class="form-control" type="text" name="pmt" placeholder="Enter PMT number">
-                </div>
-                <div class="col-sm-6 ">
-                    <select class="form-control" name="pmtStatus">
-                        <option class="fg-grayLight" selected>Select PMT status</option>
-                        <option value="Active">Active</option>
-                        <option value="Cancel">Cancel</option>
-                    </select>
                 </div>
             </div>
             <div class="row form-group">
@@ -171,3 +159,4 @@
         });
     });
 </script>
+</div>

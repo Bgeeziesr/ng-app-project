@@ -18,10 +18,13 @@
             <tr ng-repeat="pmt in pmts">
                 <td>{{pmt.id}}</td>
                 <td>{{pmt.mots.id}}</td>
-                <td><button class="btn btn-sm open-wizard">Edit</button></td>
+                <td><button ng-click="editPmt(pmt)" class="btn btn-sm open-wizard">Edit</button></td>
             </tr>
         </table>
+        <div class="text-center">
+            <button class="open-wizard">Create New</button>
+        </div>
     </div>
 </div>
-<div ng-include="'partials/pmtWizard.html'"></div>
+<pmt-wizard></pmt-wizard>
 
