@@ -1,7 +1,8 @@
 'use strict';
 
-myApp.controller('pmtCtrl', function($scope, pmtFactory, $rootScope){
-    /*$scope.curPmt = {
+myApp.controller('pmtCtrl', function($scope, pmtFactory){
+    /*
+    {
         id:$scope.pmtId,
         pid:$scope.pid,
         si:$scope.si,
@@ -49,7 +50,6 @@ myApp.controller('pmtCtrl', function($scope, pmtFactory, $rootScope){
     }
 
     $scope.savePmt = function (){
-
         pmtFactory.create($scope.curPmt);
     }
 

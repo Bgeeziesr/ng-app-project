@@ -3,9 +3,14 @@
 myApp.directive('pmtWizard', function(){
     return{
         restrict: 'E',
-        controller: 'pmtCtrl',
+        scope:{
+            pmt: "="
+        },
         templateUrl: 'partials/pmtWizard.html',
-        link: function(scope){
+        link: function(scope, element, attrs){
+            scope.$watch('pmt',function(){
+                console.log(scope.pmt.pid);
+            });
         }
     }
 });

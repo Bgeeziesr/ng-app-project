@@ -379,7 +379,7 @@
                     '<div class="modal-content wizard-content">',
                         '<div class="modal-header wizard-header">',
                             '<button type="button" class="close wizard-close" style="font-size: 24px; color:red" aria-hidden="true">&times;</button>',
-                            '<h3 class="modal-title wizard-title fg-white"></h3>',
+                            '<h3 class="modal-title wizard-title text-white"></h3>',
                             '<span class="wizard-subtitle"></span>',
                         '</div>',
                         '<div class="modal-body wizard-body">',
@@ -432,7 +432,7 @@
                 nextText: "Next",
                 backText: "Back",
                 submitText: "Submit",
-                submittingText: "Submitting...",
+                submittingText: "Submitting..."
             },
             formClass: "form-horizontal"
         };
