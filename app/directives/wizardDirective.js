@@ -6,10 +6,18 @@ myApp.directive('pmtWizard', function(){
         scope:{
             pmt: "="
         },
+        transclude: false,
         templateUrl: 'partials/pmtWizard.html',
         link: function(scope, element, attrs){
+
+            var pid = $('#pid');
+            console.log(pid.textContent);
+            console.log(pid.text());
+
             scope.$watch('pmt',function(){
-                console.log(scope.pmt.pid);
+                pid.text(scope.pmt.pid);
+                console.log(pid.text());
+                pid.attr('placeholder', scope.pmt.pid);
             });
         }
     }
