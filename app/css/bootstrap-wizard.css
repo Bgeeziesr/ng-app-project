@@ -7,7 +7,7 @@
 .wizard-content {border-radius: 0;}
 
 .wizard-body {
-    background-color: #8a8a8a;
+    background-color: #f5f5f5;
 	padding: 0;
 	margin: 0;
 }
@@ -25,7 +25,7 @@
 	display: inline;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-family: inherit;
-	font-weight: bold;
+	font-weight: 300;
 	text-rendering: optimizelegibility;
 	color: white;
 }
@@ -40,7 +40,7 @@
 /* WIZARD NAVIGATION */
 .wizard-steps {
 	width: 28%;
-	background-color: #999;
+	background-color: #222;
 	/*border-bottom-left-radius: 6px;*/
 	position: relative;
 }
@@ -71,7 +71,7 @@ li.wizard-nav-item.active .fa-chevron-right {
 }
 
 .wizard-nav-list > li > a {
-	background-color:#999;
+	background-color:#222;
 	padding:3px 15px 3px 20px;
 	cursor:default;
 	color: #B4B4B4;
@@ -82,13 +82,13 @@ li.wizard-nav-item.active .fa-chevron-right {
 }
 
 .wizard-nav-list > li.already-visited > a.wizard-nav-link {
-	color:#0088CC;
+	color: rgba(250, 114, 101,.50);
 	cursor:pointer;
 }
 
 .wizard-nav-list > li.active > a.wizard-nav-link {
-    background-color: #8a8a8a;
-	color:white;
+    background: #f5f5f5;
+	color: darkred;
 }
 
 .wizard-nav-item .already-visited .active {
@@ -125,7 +125,7 @@ li.wizard-nav-item.active .fa-chevron-right {
 .wizard-success,
 .wizard-loading,
 .wizard-card {
-	border-top: 1px solid #8a8a8a;
+	border-top: 1px solid #f5f5f5;
 	display:none;
 	padding:35px;
 	padding-top:20px;
@@ -147,15 +147,27 @@ li.wizard-nav-item.active .fa-chevron-right {
 	margin-bottom:20px;
 	font-size:21px;
 	line-height:40px;
+    color: darkred;
 	font-weight:normal;
     border-bottom:1px inset RGBA(0,0,0,.1);
 }
 
-.wizard-card input, .wizard-card select, .wizard-card textarea {
-    padding: 5px;
-    border-radius: 0px;
-    margin-bottom: 8px;
+.input-label {
+    color: #888;
+    font-weight: 300;
 }
+
+.wizard-card input, .wizard-card select, .wizard-card textarea {
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 0px;
+    margin-bottom: 0px;
+}
+
+.wizard-card input, .wizard-card select{
+    height: 28px;
+}
+
 .wizard-card .form-group div {
     padding-left: 0;
 }
@@ -193,4 +205,75 @@ li.wizard-nav-item.active .fa-chevron-right {
 
 .wizard-dialog .popover.error-popover .arrow {
 	border-right-color:#953B39;
+}
+
+.btn-next {
+    color:white;
+    background-color: darkred;
+}
+
+.btn-next:hover{
+    color:white;
+}
+
+.progress-bar-darkred {
+    background-color: darkred;
+}
+
+.progress {
+    border-radius: 0;
+}
+
+.shortcut {
+    padding: 4px 12px;
+    vertical-align: middle !important;
+    background-color: #d9d9d9;
+    border: 1px transparent solid;
+    color: #222222;
+    border-radius: 0;
+    cursor: pointer;
+    outline: none;
+    font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    height: 92px;
+    width: 92px;
+    text-align: center;
+    font-size: 10pt;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    display: inline-block;
+    position: relative;
+}
+
+.shortcut.danger {
+    background-color: #9a1616 !important;
+    color: #ffffff !important;
+}
+
+.shortcut.danger.active, .shortcut.danger:active, .shortcut.danger:focus {
+    background-color: #fff !important;
+    color: #9a1616 !important;
+    border: 2px solid #9a1616;
+}
+
+.shortcut.danger:hover {
+    background-color: #fff !important;
+    color: #9a1616 !important;
+}
+
+.shortcut.warning {
+    background-color: #fa6800 !important;
+    color: #ffffff !important;
+}
+
+.shortcut.warning.active, .shortcut.warning:active, .shortcut.warning:focus {
+    background-color: #fff !important;
+    color: #fa6800 !important;
+    border: 2px solid #fa6800;
+}
+
+.shortcut.warning:hover {
+    background-color: #fff !important;
+    color: #fa6800 !important;
 }

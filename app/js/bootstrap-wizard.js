@@ -82,7 +82,7 @@
             }
             else {
                 w._readyToSubmit = false;
-                w.changeNextButton(w.args.buttons.nextText, "btn-primary");
+                w.changeNextButton(w.args.buttons.nextText, "btn-next");
             }
 
             return this;
@@ -390,7 +390,7 @@
                                 '</div>',
                                 '<div class="wizard-progress-container">',
                                     '<div class="progress">',
-                                        '<div class="progress-bar large ribbed-darkCyan" style="height: 100%" data-role="progress-bar"></div>',
+                                        '<div class="progress-bar progress-bar-darkred" style="height: 100%" data-role="progress-bar"></div>',
                                     '</div>',
                                 '</div>',
                             '</div>',
@@ -403,7 +403,7 @@
                                             '<button class="btn btn-default wizard-cancel wizard-close" type="button">Cancel</button>',
                                             '<div class="btn-group-single pull-right">',
                                                 '<button class="btn btn-default wizard-back" type="button">Back</button>',
-                                                '<button class="btn btn-primary wizard-next" type="button">Next</button>',
+                                                '<button class="btn btn-next wizard-next" type="button">Next</button>',
                                             '</div>',
                                         '</div>',
                                     '</div>',
@@ -665,7 +665,7 @@
         changeNextButton: function(text, cls) {
             this.log("changing next button, text: " + text, "class: " + cls);
             if (typeof(cls) != "undefined") {
-                this.nextButton.removeClass("btn-success btn-primary");
+                this.nextButton.removeClass("btn-success", "btn-next");
             }
 
             if (cls) {

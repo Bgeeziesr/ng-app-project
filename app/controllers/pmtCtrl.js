@@ -41,7 +41,8 @@ myApp.controller('pmtCtrl', function($scope, pmtFactory){
     $scope.editPmt = function(thisPmt){
         $scope.curPmt = thisPmt;
         $scope.isEditing = true;
-        console.log($scope.curPmt);
+        console.log($scope.curPmt.tcp.totalHrs);
+
     }
 
     $scope.loadPmtData = function(){

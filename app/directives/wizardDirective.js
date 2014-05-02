@@ -1,23 +1,16 @@
 'use strict';
 
-myApp.directive('pmtWizard', function(){
+myApp.directive('pmtWizard', function($compile){
     return{
         restrict: 'E',
-        scope:{
-            pmt: "="
-        },
-        transclude: false,
         templateUrl: 'partials/pmtWizard.html',
-        link: function(scope, element, attrs){
+        link: function(scope, element){
 
-            var pid = $('#pid');
-            console.log(pid.textContent);
-            console.log(pid.text());
-
-            scope.$watch('pmt',function(){
-                pid.text(scope.pmt.pid);
-                console.log(pid.text());
-                pid.attr('placeholder', scope.pmt.pid);
+            scope.$watch('curPmt',function(){
+                $compile($('.wizard'))(scope);
+                if(scope.isEditing){
+                    $('#tcpLevel').val(scope.curPmt.tcp.level);
+                }
             });
         }
     }
