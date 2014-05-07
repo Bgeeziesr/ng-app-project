@@ -89,6 +89,8 @@ li.wizard-nav-item.active .fa-chevron-right {
 .wizard-nav-list > li.active > a.wizard-nav-link {
     background: #f5f5f5;
 	color: darkred;
+    font-style: oblique;
+    font-weight: bolder;
 }
 
 .wizard-nav-item .already-visited .active {

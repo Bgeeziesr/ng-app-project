@@ -35,6 +35,7 @@ myApp.controller('pmtCtrl', function($scope, pmtFactory){
     };*/
 
     $scope.isEditing = false;
+    $scope.actionSelected = false;
 
     $scope.pmts = pmtFactory.getPmts();
 
@@ -45,9 +46,51 @@ myApp.controller('pmtCtrl', function($scope, pmtFactory){
 
     }
 
-    $scope.loadPmtData = function(){
-        $scope.curPmt = $scope.curPmt;
-        console.log('loading Pmt data');
+    $scope.createPmt = function(){
+        $scope.curPmt = {};
+        $scope.isEditing = false;
+        console.log('creating new PMT');
+    }
+
+    $scope.setPmtAction = function(action){
+        $scope.pmtAction = action;
+        $scope.actionSelected = true;
+        console.log('set pmtAction to "'+action+'"');
+    }
+
+    $scope.submitPmtForm = function(){
+        switch ($scope.pmtAction){
+            case 'save':{
+                console.log('saving form...');
+                if($scope.isEditing){
+                    pmtFactory.updatePmts($scope.pmts);
+                }else {
+                    pmtFactory.addNewPmt($scope.curPmt);
+                }
+                break;
+            }
+            case 'submit':{
+                console.log('submitting form...');
+                if($scope.isEditing){
+                    pmtFactory.updatePmts($scope.pmts);
+                }else {
+                    pmtFactory.addNewPmt($scope.curPmt);
+                }
+                break;
+            }
+            case 'reject':{
+                console.log('rejecting form...');
+               break;
+            }
+            case 'approve':{
+                console.log('approving form...');
+                break;
+            }
+            default: {
+                console.log('ERROR! Unknown action...');
+                break;
+            }
+        }
     }
 
     $scope.savePmt = function (){

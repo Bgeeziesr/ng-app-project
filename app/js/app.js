@@ -32,10 +32,8 @@ var myApp = angular
             url: '/logout',
             templateUrl: 'partials/logout.html',
             controller: 'loginCtrl',
-            resolve:{
-                load: function($rootScope){
+            onEnter: function($rootScope){
                     $rootScope.logout();
-                }
             }
         })
     }])

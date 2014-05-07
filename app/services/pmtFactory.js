@@ -20,8 +20,14 @@ myApp.factory('pmtFactory', function(){
         return pmt;
     };
 
-    factory.createPmt = function(newPmt){
-        pmt.push(newPmt);
+    factory.addNewPmt = function(newPmt){
+        console.log("Pmt added...");
+        //pmt.push(newPmt);
+    }
+
+    factory.updatePmts = function(pmts){
+        console.log("Pmts updated...");
+       // pmt = pmts;
     }
 
     return factory;
