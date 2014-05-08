@@ -1,6 +1,6 @@
 'use strict';
 
-myApp.controller('pmtCtrl', function($scope, pmtFactory){
+myApp.controller('pmtCtrl', function($scope, pmtFactory, userFactory){
     /*
     {
         id:$scope.pmtId,
@@ -33,17 +33,15 @@ myApp.controller('pmtCtrl', function($scope, pmtFactory){
         },
         comments:$scope.comments
     };*/
-
+    $scope.curPmt = {};
     $scope.isEditing = false;
     $scope.actionSelected = false;
-
     $scope.pmts = pmtFactory.getPmts();
 
     $scope.editPmt = function(thisPmt){
+        console.log('editing PMT');
         $scope.curPmt = thisPmt;
         $scope.isEditing = true;
-        console.log($scope.curPmt.tcp.totalHrs);
-
     }
 
     $scope.createPmt = function(){
@@ -96,6 +94,4 @@ myApp.controller('pmtCtrl', function($scope, pmtFactory){
     $scope.savePmt = function (){
         pmtFactory.create($scope.curPmt);
     }
-
-    $scope.wizardControl = {};
 });

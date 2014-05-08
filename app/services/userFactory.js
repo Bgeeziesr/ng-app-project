@@ -1,6 +1,6 @@
 'use strict'
 
-myApp.factory('userFactory', function(){
+myApp.factory('userFactory', function($rootScope){
     var factory = {};
     var userIsValid = false;
 

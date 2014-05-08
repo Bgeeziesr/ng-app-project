@@ -20,10 +20,16 @@ var myApp = angular
             templateUrl: 'partials/pmt.html',
             controller: 'pmtCtrl',
             resolve:{
-                load: function(userFactory){
+                load: function(userFactory, $rootScope){
                     var userRole = userFactory.getCurrentUserRole();
                     if(userRole == 'estimator' || userRole == 'approver'){
-
+                        if(userRole == 'approver'){
+                            $rootScope.isApprover = true;
+                            console.log('user is Approver');
+                        }else{
+                            $rootScope.isApprover = false;
+                            console.log('user is not Approver');
+                        }
                     }
                 }
             }

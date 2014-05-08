@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-myApp.controller('loginCtrl', function($scope, userFactory, $rootScope, $location) {
+myApp.controller('loginCtrl', function($scope, userFactory, $rootScope, $state) {
     $rootScope.loggedIn = false;
     $scope.formIsFilled = function(){
         if($scope.username && $scope.password){
@@ -19,6 +19,7 @@ myApp.controller('loginCtrl', function($scope, userFactory, $rootScope, $locatio
             $scope.password = '';
             $scope.name = user.name;
             userFactory.setCurrentUserRole(user.role);
+
         } else {
             $scope.username = '';
             $scope.password = '';
@@ -43,5 +44,11 @@ myApp.controller('loginCtrl', function($scope, userFactory, $rootScope, $locatio
         $rootScope.loggedIn = false;
         userFactory.setCurrentUserRole('none');
         console.log('logged out... scope.loggedIn => ' + $rootScope.loggedIn);
+    }
+
+    $scope.reload = function (){
+        $('#logout-modal').on('hidden.bs.modal', function (e) {
+            $state.transitionTo('home');
+        })
     }
 });

@@ -257,11 +257,13 @@ li.wizard-nav-item.active .fa-chevron-right {
     background-color: #fff !important;
     color: #9a1616 !important;
     border: 2px solid #9a1616;
+    box-shadow: 0px 0px 10px #e51616;
 }
 
 .shortcut.danger:hover {
     background-color: #fff !important;
     color: #9a1616 !important;
+    border: 2px solid #9a1616;
 }
 
 .shortcut.warning {
@@ -273,9 +275,47 @@ li.wizard-nav-item.active .fa-chevron-right {
     background-color: #fff !important;
     color: #fa6800 !important;
     border: 2px solid #fa6800;
+    box-shadow: 0px 0px 10px #faa050;
 }
 
 .shortcut.warning:hover {
     background-color: #fff !important;
     color: #fa6800 !important;
+    border: 2px solid #fa6800;
+}
+
+.shortcut.success {
+    background-color: #47a447 !important;
+    color: #ffffff !important;
+}
+
+.shortcut.success.active, .shortcut.success:active, .shortcut.success:focus {
+    background-color: #fff !important;
+    color: #47a447 !important;
+    border: 2px solid #47a447;
+    box-shadow: 0px 0px 10px #4be74b;
+}
+
+.shortcut.success:hover {
+    background-color: #fff !important;
+    color: #47a447 !important;
+    border: 2px solid #47a447;
+}
+
+.shortcut.primary {
+    background-color: #357ebd !important;
+    color: #ffffff !important;
+}
+
+.shortcut.primary.active, .shortcut.primary:active, .shortcut.primary:focus {
+    background-color: #fff !important;
+    color: #357ebd !important;
+    border: 2px solid #357ebd;
+    box-shadow: 0px 0px 10px #40a3ed;
+}
+
+.shortcut.primary:hover {
+    background-color: #fff !important;
+    color: #357ebd !important;
+    border: 2px solid #357ebd;
 }
