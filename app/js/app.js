@@ -20,17 +20,21 @@ var myApp = angular
             templateUrl: 'partials/pmt.html',
             controller: 'pmtCtrl',
             resolve:{
-                load: function(userFactory, $rootScope){
+                load: function(userFactory, $rootScope, $state){
                     var userRole = userFactory.getCurrentUserRole();
-                    if(userRole == 'estimator' || userRole == 'approver'){
-                        if(userRole == 'approver'){
-                            $rootScope.isApprover = true;
-                            console.log('user is Approver');
-                        }else{
-                            $rootScope.isApprover = false;
-                            console.log('user is not Approver');
-                        }
+                    if($rootScope.loggedIn && (userRole == 'estimator' || userRole == 'approver')){
+                            if(userRole == 'approver'){
+                                $rootScope.isApprover = true;
+                                console.log('user is Approver');
+                            }else{
+                                $rootScope.isApprover = false;
+                                console.log('user is not Approver');
+                            }
+                    }else{
+                        alert('You are not authorized to access this page.');
+                        $state.go('home');
                     }
+
                 }
             }
         })

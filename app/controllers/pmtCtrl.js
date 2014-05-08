@@ -1,6 +1,6 @@
 'use strict';
 
-myApp.controller('pmtCtrl', function($scope, pmtFactory, userFactory){
+myApp.controller('pmtCtrl', function($scope, pmtFactory, $window){
     /*
     {
         id:$scope.pmtId,
@@ -42,12 +42,14 @@ myApp.controller('pmtCtrl', function($scope, pmtFactory, userFactory){
         console.log('editing PMT');
         $scope.curPmt = thisPmt;
         $scope.isEditing = true;
+        $window.wizard.show();
     }
 
     $scope.createPmt = function(){
         $scope.curPmt = {};
         $scope.isEditing = false;
         console.log('creating new PMT');
+        $window.wizard.show();
     }
 
     $scope.setPmtAction = function(action){
